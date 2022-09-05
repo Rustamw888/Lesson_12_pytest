@@ -19,6 +19,7 @@ def set_up(browser_size):
     width = browser_size.param[0]
     height = browser_size.param[1]
     browser.driver.set_window_size(width=width, height=height)
+    browser.open(base_url)
     '''
     OR:     
     browser.config.window_width = width
