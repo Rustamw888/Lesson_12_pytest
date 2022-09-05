@@ -11,12 +11,11 @@ base_url = 'https://github.com/'
 
 @browser_size_value
 def browser_size(request):
-    return request.param
+    return request
 
 
 @pytest.fixture(scope='function', autouse=True)
 def set_up(browser_size):
-    browser.open(base_url)
     width = browser_size.param[0]
     height = browser_size.param[1]
     browser.driver.set_window_size(width=width, height=height)
